@@ -1,0 +1,176 @@
+// takes key value pairs as a '\n' delimited elements
+// utilizes the Map ES6 object
+// utilizes the spread operator to fill an array from Map
+// utilizes JSON.stringify to turn array of arrays to JSON
+// returns a json object via JSON.parse
+
+set = `AF:Afghanistan
+AL:Albania
+DZ:Algeria
+AO:Angola
+AR:Argentina
+AM:Armenia
+AU:Australia
+AT:Austria
+AZ:Azerbaijan
+BS:Bahamas
+BD:Bangladesh
+BY:Belarus
+BE:Belgium
+BZ:Belize
+BJ:Benin
+BO:Bolivia (Plurinational State of)
+BA:Bosnia and Herzegovina
+BW:Botswana
+BR:Brazil
+BN:Brunei Darussalam
+BG:Bulgaria
+BF:Burkina Faso
+BI:Burundi
+KH:Cambodia
+CM:Cameroon
+CA:Canada
+CF:Central African Republic
+TD:Chad
+CL:Chile
+CN:China
+CO:Colombia
+CG:Congo
+CD:Congo, Democratic Republic of the
+CR:Costa Rica
+CI:Côte d'Ivoire
+HR:Croatia
+CU:Cuba
+CY:Cyprus
+CZ:Czech Republic
+DK:Denmark
+DJ:Djibouti
+DO:Dominican Republic
+EC:Ecuador
+EG:Egypt
+SV:El Salvador
+GQ:Equatorial Guinea
+ER:Eritrea
+EE:Estonia
+ET:Ethiopia
+FJ:Fiji
+FI:Finland
+FR:France
+GA:Gabon
+GM:Gambia
+GE:Georgia
+DE:Germany
+GH:Ghana
+GR:Greece
+GT:Guatemala
+GN:Guinea
+GW:Guinea-Bissau
+GY:Guyana
+HT:Haiti
+HN:Honduras
+HU:Hungary
+IS:Iceland
+IN:India
+ID:Indonesia
+IR:Iran, Islamic Republic of
+IQ:Iraq
+IE:Ireland
+IL:Israel
+IT:Italy
+JM:Jamaica
+JP:Japan
+JO:Jordan
+KZ:Kazakhstan
+KE:Kenya
+KR:Korea, Republic of
+KW:Kuwait
+KG:Kyrgyzstan
+LA:Lao People's Democratic Republic
+LV:Latvia
+LB:Lebanon
+LS:Lesotho
+LR:Liberia
+LT:Lithuania
+LU:Luxembourg
+MK:Macedonia, The Former Yugoslav Republic of
+MG:Madagascar
+MW:Malawi
+MY:Malaysia
+ML:Mali
+MR:Mauritania
+MX:Mexico
+MD:Moldova, Republic of
+MN:Mongolia
+ME:Montenegro
+MA:Morocco
+MZ:Mozambique
+MM:Myanmar
+NA:Namibia
+NP:Nepal
+NL:Netherlands
+NZ:New Zealand
+NI:Nicaragua
+NE:Niger
+NG:Nigeria
+NO:Norway
+OM:Oman
+PK:Pakistan
+PA:Panama
+PG:Papua New Guinea
+PY:Paraguay
+PE:Peru
+PH:Philippines
+PL:Poland
+PT:Portugal
+QA:Qatar
+RO:Romania
+RU:Russian Federation
+RW:Rwanda
+SA:Saudi Arabia
+SN:Senegal
+RS:Serbia
+SL:Sierra Leone
+SK:Slovakia
+SI:Slovenia
+SB:Solomon Islands
+SO:Somalia
+ZA:South Africa
+SS:South Sudan
+LK:Spain Sri Lanka Sudan Suriname Swaziland
+SE:Sweden
+CH:Switzerland
+SY:Syrian Arab Republic
+TJ:Tajikistan
+TZ:Tanzania, United Republic of
+TH:Thailand
+TL:Timor-Leste, Democratic Republic of
+TG:Togo
+TT:Trinidad and Tobago
+TN:Tunisia
+TR:Turkey
+TM:Turkmenistan
+UG:Uganda
+UA:Ukraine
+AE:United Arab Emirates
+GB:United Kingdom
+US:United States
+UY:Uruguay
+UZ:Uzbekistan
+VU:Vanuatu
+VE:Venezuela (Bolivarian Republic of)
+VN:Viet Nam
+YE:Yemen
+ZM:Zambia
+ZW:Zimbabwe`
+
+set = set.split('\n')
+
+d = new Map()
+set.forEach((arr)=> {
+  item = arr.split(':')
+  d.set(item[0], false)
+})
+
+obj = JSON.parse(JSON.stringify([...d]))
+
+o = {}; obj.forEach((v)=>{o[v[0]] = v[1] })
