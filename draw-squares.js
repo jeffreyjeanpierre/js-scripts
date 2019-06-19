@@ -1,8 +1,8 @@
 lastColor = ""
 alternateDefault = false;
-colorList = ["red", "#e03f3f", "#ff6b6b", "#ff906b", "#ff541b", "#de3800", "#a02800", "crimson", "#ed144d", "#e2a6b0"]
-rectWidth = 10
-rectHeight = 10
+colorList = ["black", "black", "black", "white", "black", "white", "white", "white", "black", "white"]
+rectWidth = 20
+rectHeight = 20
 canvasId = 'pattern-board'
 displayId = 'pattern-score'
 serialId = 'pattern-code'
@@ -13,7 +13,7 @@ randomStyle = (colorList) => {
     let color = colorList[colorIndex]
     if (color && color == lastColor) {
         alternateDefault = !alternateDefault;
-        lastColor = color = alternateDefault ? "pink" : "tomato";
+        lastColor = color = alternateDefault ? "673ab7" : "9c27b0";
         return color;
     }
     lastColor = color;
@@ -40,8 +40,8 @@ drawPattern = (rows, cols) => {
 }
 var canvas = document.createElement('canvas')
 canvas.id = canvasId
-canvas.width= 500
-canvas.height = 500
+canvas.width = window.innerWidth
+canvas.height = window.innerHeight
 
 var display = document.createElement('display')
 display.id = displayId
@@ -65,4 +65,3 @@ document.addEventListener('keydown', (e) => {
 })
 
 document.onreadystatechange(draw());
-
